@@ -1,6 +1,5 @@
-import React, { SetStateAction, useState } from "react";
+import { useState } from "react";
 import './App.css'
-import './Test.tsx'
 import Test from "./Test.tsx";
 
 function App() {
@@ -25,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <h1>Budgeting App</h1>
+      <p>Income</p>
       <form onSubmit={handleSubmit}>
         <input
           placeholder="Income Type"

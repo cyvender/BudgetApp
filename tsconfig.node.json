@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    //I added
+    "outDir": "./App.tsx",
+    //I added
+    //"outFile": "./dist/**/*.js",
     "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",

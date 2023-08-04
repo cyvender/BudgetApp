@@ -21,7 +21,7 @@ function Test () {
   
     return (
       <div className="App">
-        <p>Expenses</p>
+        <h1>Budgeting App</h1>
         <form onSubmit={handleSubmit}>
           <input
             placeholder="expense Type"
