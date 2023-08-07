@@ -38,7 +38,7 @@ function App() {
         />
         <button type="submit">Enter</button>
       </form>
-
+      test
       <ul>
         {list.map((item, index) => (
           <li key={index}>{item.incomet} - {item.income}</li>
