@@ -47,7 +47,7 @@ function App() {
         ))}
       </ul>
       <Expenses />
-      test
+      base
     </div>
   );
   }
