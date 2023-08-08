@@ -48,6 +48,7 @@ function App() {
       </ul>
       <Expenses />
       base
+      
     </div>
   );
   }
