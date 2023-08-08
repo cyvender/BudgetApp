@@ -16,10 +16,11 @@ function App() {
     }
     if(income && incomet) {
       setList([...list,data])
-      setIncome(0)
+      setIncome(9)
       setIncomet("")
     }
   }
+
 
   return (
     <div className="App">
@@ -32,9 +33,10 @@ function App() {
           onChange={(e) => setIncomet(e.target.value)}
         />
         <input
+          type="number"
           placeholder="Income"
           value={income}
-          onChange={(e) => setIncome(e.target.value)}
+          onChange={(e) => setIncome(parseFloat(e.target.value))}
         />
         <button type="submit">Enter</button>
       </form>
