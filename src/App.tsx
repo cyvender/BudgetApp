@@ -4,9 +4,9 @@ import Test from "./Test.tsx";
 
 function App() {
 
-  const [income, setIncome] = useState('');
   const [incomet, setIncomet] = useState('');
-  const[list, setList] = useState<{ income: string; incomet: string }[]>([]);
+  const [income, setIncome] = useState(0);
+  const[list, setList] = useState<{ incomet: string; income: number; }[]>([]);
 
   const handleSubmit=(e:any) =>{
     e.preventDefault();
@@ -16,14 +16,14 @@ function App() {
     }
     if(income && incomet) {
       setList([...list,data])
-      setIncome("")
+      setIncome(0)
       setIncomet("")
     }
   }
 
   return (
     <div className="App">
-      <h1>Budgeting App my r</h1>
+      <h1>Budgeting App</h1>
       <p>Income</p>
       <form onSubmit={handleSubmit}>
         <input
