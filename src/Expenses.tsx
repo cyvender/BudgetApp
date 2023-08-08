@@ -1,10 +1,11 @@
 import { useState } from "react";
+import './App.css'
 
-function Test () {
+function Expenses () {
 
-    const [expense, setexpense] = useState('');
     const [expenset, setexpenset] = useState('');
-    const[list, setList] = useState<{ expense: string; expenset: string }[]>([]);
+    const [expense, setexpense] = useState(0);
+    const[list, setList] = useState<{ expenset: string, expense: number;  }[]>([]);
   
     const handleSubmit=(e:any) =>{
       e.preventDefault();
@@ -12,11 +13,11 @@ function Test () {
         expense: expense,
         expenset: expenset
       }
-      if(expense && expenset) {
+      //if(expense && expenset) {
         setList([...list,data])
-        setexpense("")
+        setexpense(0)
         setexpenset("")
-      }
+      //}
     }
   
     return (
@@ -29,9 +30,10 @@ function Test () {
             onChange={(e) => setexpenset(e.target.value)}
           />
           <input
+            type="number"
             placeholder="expense"
             value={expense}
-            onChange={(e) => setexpense(e.target.value)}
+            onChange={(e) => setexpense(parseFloat(e.target.value))}
           />
           <button type="submit">Enter</button>
         </form>
@@ -44,5 +46,5 @@ function Test () {
       </div>
     );
     }
-  export default Test
+  export default Expenses
   

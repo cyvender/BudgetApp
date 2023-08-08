@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './App.css'
-import Test from "./Test.tsx";
+import Expenses from "./Expenses.tsx";
 
 function App() {
 
@@ -14,11 +14,11 @@ function App() {
       income: income,
       incomet: incomet
     }
-    if(income && incomet) {
+    //if(income && incomet) {
       setList([...list,data])
-      setIncome(9)
+      setIncome(0)
       setIncomet("")
-    }
+   // }
   }
 
 
@@ -40,13 +40,14 @@ function App() {
         />
         <button type="submit">Enter</button>
       </form>
-      test
+       
       <ul>
         {list.map((item, index) => (
           <li key={index}>{item.incomet} - {item.income}</li>
         ))}
       </ul>
-      <Test />
+      <Expenses />
+      test
     </div>
   );
   }
