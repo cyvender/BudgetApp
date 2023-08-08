@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Budgeting App</h1>
+      <h1>Budgeting App my r</h1>
       <p>Income</p>
       <form onSubmit={handleSubmit}>
         <input
