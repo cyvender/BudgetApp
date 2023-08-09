@@ -20,7 +20,10 @@ function App() {
       setIncomet("")
    // }
   }
-
+  let totalIncome = 0;
+  for (const item of list) {
+    totalIncome += item.income;
+  }
 
   return (
     <div className="App">
@@ -46,6 +49,7 @@ function App() {
           <li key={index}>{item.incomet} - {item.income}</li>
         ))}
       </ul>
+      <>{totalIncome}</>
       <Expenses />
       base
       
