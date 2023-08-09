@@ -13,12 +13,16 @@ function Expenses () {
         expense: expense,
         expenset: expenset
       }
-      //if(expense && expenset) {
+      if(expenset) {
         setList([...list,data])
         setexpense(0)
         setexpenset("")
-      //}
+      }
     }
+    let totalExpenses = 0;
+  for (const item of list) {
+    totalExpenses += item.expense;
+  }
   
     return (
       <div className="App">
@@ -43,8 +47,9 @@ function Expenses () {
             <li key={index}>{item.expenset} - {item.expense}</li>
           ))}
         </ul>
+        <>Total expenses: {totalExpenses}</>
       </div>
     );
     }
-  export default Expenses
-  
+  export default Expenses;
+  //export const go = 100

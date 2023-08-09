@@ -1,6 +1,8 @@
 import { useState } from "react";
 import './App.css'
 import Expenses from "./Expenses.tsx";
+//import { go } from "./Expenses.tsx";
+//console.log(go);
 
 function App() {
 
@@ -14,17 +16,17 @@ function App() {
       income: income,
       incomet: incomet
     }
-    //if(income && incomet) {
+    if(incomet) {
       setList([...list,data])
       setIncome(0)
       setIncomet("")
-   // }
+    }
   }
   let totalIncome = 0;
   for (const item of list) {
     totalIncome += item.income;
   }
-
+  console.log(income)
   return (
     <div className="App">
       <h1>Budgeting App</h1>
@@ -49,11 +51,12 @@ function App() {
           <li key={index}>{item.incomet} - {item.income}</li>
         ))}
       </ul>
-      <>{totalIncome}</>
+      <>Total income: {totalIncome}</>
       <Expenses />
-      base
+      bases
       
     </div>
   );
   }
 export default App
+
