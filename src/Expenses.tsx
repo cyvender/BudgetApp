@@ -1,28 +1,24 @@
 import { useState } from "react";
 import './App.css'
 
-function Expenses () {
+function Expenses (props:any) {
 
-    const [expenset, setexpenset] = useState('');
-    const [expense, setexpense] = useState(0);
-    const[list, setList] = useState<{ expenset: string, expense: number;  }[]>([]);
+    //const [expenset, setexpenset] = useState('');
+    //const [props., setexpense] = useState(0);
+    //const[list, setList] = useState<{ expenset: string, expense: number;  }[]>([]);
   
     const handleSubmit=(e:any) =>{
       e.preventDefault();
       const data = {
-        expense: expense,
-        expenset: expenset
+        expense: props.expense,
+        expenset: props.expenset
       }
-      if(expenset) {
-        setList([...list,data])
-        setexpense(0)
-        setexpenset("")
+      if(props.expenset) {
+        props.setList1([...props.list1,data])
+        props.setexpense(0)
+        props.setexpenset("")
       }
     }
-    let totalExpenses = 0;
-  for (const item of list) {
-    totalExpenses += item.expense;
-  }
   
     return (
       <div className="App">
@@ -30,26 +26,27 @@ function Expenses () {
         <form onSubmit={handleSubmit}>
           <input
             placeholder="expense Type"
-            value={expenset}
-            onChange={(e) => setexpenset(e.target.value)}
+            value={props.expenset}
+            onChange={(e) => props.setexpenset(e.target.value)}
           />
           <input
             type="number"
             placeholder="expense"
-            value={expense}
-            onChange={(e) => setexpense(parseFloat(e.target.value))}
+            value={props.expense}
+            onChange={(e) => props.setexpense(parseFloat(e.target.value))}
           />
           <button type="submit">Enter</button>
         </form>
-  
+        
         <ul>
-          {list.map((item, index) => (
+          {props.list1.map((item:any, index:any) => (
             <li key={index}>{item.expenset} - {item.expense}</li>
           ))}
         </ul>
-        <>Total expenses: {totalExpenses}</>
+        
       </div>
     );
     }
+  //export {totalExpenses};
   export default Expenses;
-  //export const go = 100
+  
