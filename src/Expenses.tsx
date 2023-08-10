@@ -1,4 +1,3 @@
-import { useState } from "react";
 import './App.css'
 
 function Expenses (props:any) {
@@ -47,6 +46,5 @@ function Expenses (props:any) {
       </div>
     );
     }
-  //export {totalExpenses};
   export default Expenses;
   
