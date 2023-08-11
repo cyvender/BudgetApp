@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './App.css'
 import Expenses from "./Expenses.tsx";
-
+import ExpenseList from "./PresetExpenseList.tsx";
 
 
 function App() {
@@ -11,7 +11,8 @@ function App() {
   const [list, setList] = useState<{ incomet: string; income: number; }[]>([]);
   const [expense, setexpense] = useState(0);
   const [expenset, setexpenset] = useState('');
-  const[list1, setList1] = useState<{ expenset: string; expense: number;  }[]>([]);
+  const [list1, setList1] = useState<{ expenset: string; expense: number;  }[]>([]);
+  const [expenseList, setExpenseList] = useState(false)
 
   const handleSubmit=(e:any) =>{
     e.preventDefault();
@@ -42,6 +43,17 @@ function App() {
     //monthly += totalIncome + totalExpenses;
   //}
   console.log(monthly)
+
+  //default list 
+  
+    //function useDefault(){
+      //ExpenseList();
+    //}
+    
+      const useDefaultList = () => {
+        setExpenseList(!expenseList)
+      };
+
   return (
     <div className="App">
       <h1>Budgeting App</h1>
@@ -74,11 +86,16 @@ function App() {
                 totalExpenses={totalExpenses}
                 list1={list1}
                 setList1={setList1}/>
-      <>Total expenses: {totalExpenses}</>
+      <button onClick={useDefaultList}>Use Defaullt</button> 
+      {expenseList && <ExpenseList />}
       <br/>
+      <>Total expenses: {totalExpenses}</>
+      <br/><br/>
       <>Monthly: {monthly}</>
       <br/>
-      bases
+      
+      <br/><br/>
+      Good Job
       
     </div>
   );
