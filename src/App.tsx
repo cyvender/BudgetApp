@@ -13,8 +13,9 @@ function App() {
   const [expenset, setexpenset] = useState('');
   const [list1, setList1] = useState<{ expenset: string; expense: number;  }[]>([]);
   const [expenseList, setExpenseList] = useState(false)
+  //const [expenseListTotal, setExpenseListTotal] = useState(0);
 
-  const handleSubmit=(e:any) =>{
+  const handleSubmit=(e:any) => {
     e.preventDefault();
     const data = {
       income: income,
@@ -56,7 +57,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Budgeting App</h1>
+      <h1>Budget App</h1>
       <p>Income</p>
       <form onSubmit={handleSubmit}>
         <input
@@ -75,10 +76,15 @@ function App() {
        
       <ul>
         {list.map((item, index) => (
-          <li key={index}>{item.incomet} - {item.income}</li>
+          <li key={index}>{item.incomet}: {item.income}</li>
         ))}
       </ul>
       <>Total income: {totalIncome}</>
+      <p>Expenses</p>
+
+      <button onClick={useDefaultList}>Use Default</button> 
+      {expenseList && <ExpenseList />}
+
       <Expenses expense={expense} 
                 setexpense={setexpense} 
                 expenset={expenset} 
@@ -86,8 +92,8 @@ function App() {
                 totalExpenses={totalExpenses}
                 list1={list1}
                 setList1={setList1}/>
-      <button onClick={useDefaultList}>Use Defaullt</button> 
-      {expenseList && <ExpenseList />}
+
+      
       <br/>
       <>Total expenses: {totalExpenses}</>
       <br/><br/>

@@ -21,7 +21,7 @@ function Expenses (props:any) {
   
     return (
       <div className="App">
-        <p>Expenses</p>
+        
         <form onSubmit={handleSubmit}>
           <input
             placeholder="expense Type"
@@ -39,7 +39,7 @@ function Expenses (props:any) {
         
         <ul>
           {props.list1.map((item:any, index:any) => (
-            <li key={index}>{item.expenset} - {item.expense}</li>
+            <li key={index}>{item.expenset}: {item.expense}</li>
           ))}
         </ul>
         
